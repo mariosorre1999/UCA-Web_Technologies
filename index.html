@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="has-text-centered">
+<section class="section">
+    <h1 class="flex title is-1 text-white   ">CineCheck</h1>
+    <div class="container flex flex-row m-0 gap-10">
+        <div style="min-width: 300px">
+            <form id="addToDo" class="box">
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <input id="title" class="input" type="text" placeholder="Titanic" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Platform</label>
+                    <div class="control">
+                        <div class="select is-multiple">
+                            <select name="platform" id="platform" size="6" required multiple>
+                                <option value="Netflix">Netflix</option>
+                                <option value="Amazon Prime">Amazon Prime</option>
+                                <option value="Cinema">Cinema</option>
+                                <option value="Blu-ray">Blu-ray</option>
+                                <option value="myCanal">myCanal</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Actors</label>
+                    <div class="control">
+                        <input id="actors" type="text" class="input" placeholder="Leonardo Di Caprio, John Travolta" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Director</label>
+                    <div class="control">
+                        <input id="director" type="text" class="input" placeholder="Quentin Tarantino">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Release Year</label>
+                    <div class="control">
+                        <input id="year" type="number" class="input" placeholder="1999">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Poster</label>
+                    <div class="control">
+                        <input id="poster-img" type="url" class="input" placeholder="https://url.to/img.png">
+                    </div>
+                </div>
+                <a class="button is-info">
+                    <button id="add" onclick="addTodo(event)">Add</button>
+                </a>
+            </form>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="flex justify-between">
+                <div class="flex flex-row">
+                    <input id="search" class="input" type="text" placeholder="Search...">
+                </div>
+                <button class="button is-danger" id="removeAll" onclick="removeAll()">Remove All</button>
+            </div>
+
+            <table id="table" class="table is-striped is-fullwidth">
+                <thead>
+                <tr>
+                    <th style="cursor: pointer">Title</th>
+                    <th style="cursor: pointer">Platforms</th>
+                    <th style="cursor: pointer">Actors</th>
+                    <th style="cursor: pointer">Director</th>
+                    <th style="cursor: pointer">Release Year</th>
+                    <th style="cursor: pointer">Poster</th>
+                    <th style="cursor: pointer">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="todos">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+<script src="script.js"></script>
+</html>
